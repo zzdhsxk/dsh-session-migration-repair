@@ -1,0 +1,59 @@
+{
+  "name": "dsh-session-migration-repair",
+  "version": "0.1.0",
+  "description": "Repair legacy DSH session logs (format v0) that the current build refuses to migrate: scan defects, back up, fix in place, and verify offline against the real migration chain.",
+  "type": "module",
+  "main": "lib/index.js",
+  "bin": {
+    "dsh-session-migration-repair": "bin/cli.mjs"
+  },
+  "exports": {
+    ".": "./lib/index.js",
+    "./core": "./lib/core/index.mjs",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "bin",
+    "skills",
+    "cordis.patch.yml",
+    "README.md",
+    "README.zh.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.mjs"
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "session",
+    "repair",
+    "migration",
+    "v0",
+    "v3",
+    "zstd",
+    "jsonl"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zzdhsxk/dsh-session-migration-repair.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zzdhsxk/dsh-session-migration-repair/issues"
+  },
+  "homepage": "https://github.com/zzdhsxk/dsh-session-migration-repair#readme",
+  "dsh": {
+    "engines": {
+      "dsh": ">=0.1.5-rc.1"
+    },
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

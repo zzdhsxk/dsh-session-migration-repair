@@ -1,0 +1,4 @@
+# dsh-session-migration-repair bundle patch.
+- insert:
+    - id: dsh-session-migration-repair
+      name: dsh-session-migration-repair
