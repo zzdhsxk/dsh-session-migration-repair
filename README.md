@@ -27,7 +27,7 @@ dsh plugin --profile web add github:<owner>/dsh-session-migration-repair   # fro
 # restart dsh web and reload the page
 ```
 
-Or use the CLI standalone — zero dependencies, Node ≥ 20:
+Or use the CLI standalone — zero dependencies, **Node ≥ 22.15** (Node 20's `node:zlib` has no zstd API):
 
 ```bash
 node bin/cli.mjs --help

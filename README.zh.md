@@ -27,7 +27,7 @@ dsh plugin --profile web add github:<owner>/dsh-session-migration-repair   # 从
 # 之后重启 dsh web 并刷新页面
 ```
 
-也可以完全脱离 DSH 单独用命令行（零依赖，只需要 Node ≥ 20）：
+也可以完全脱离 DSH 单独用命令行（零依赖，需要 **Node ≥ 22.15** —— Node 20 的 `node:zlib` 还没有 zstd API）：
 
 ```bash
 node bin/cli.mjs --help

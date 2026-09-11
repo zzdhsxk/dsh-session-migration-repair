@@ -9,12 +9,16 @@ jobs:
   test:
     runs-on: ubuntu-latest
     strategy:
+      # 需要 node:zlib 的 zstd 支持（Node >= 22.15），因此不测 Node 20。
+      fail-fast: false
       matrix:
-        node: [20, 22, 24]
+        node: [22, 24]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}
+      - name: Show runtime
+        run: node -e "console.log(process.version, 'zstd:', typeof require('node:zlib').zstdCompressSync)"
       - name: Run tests
         run: node --test test/*.test.mjs
